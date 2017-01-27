@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from '../member.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-members',
@@ -7,6 +8,9 @@ import { Member } from '../member.model';
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent {
+
+  constructor(private router: Router){}
+
   members: Member[] = [
    new Member("Harry Potter", "Gryffindor",
        "stag", 1),
@@ -38,6 +42,9 @@ export class MembersComponent {
    new Member("Dean Thomas", "Gryffindor", "non-corporeal", 25)
 
  ];
+ goToDetailPage(clickedMember: Member) {
+   this.router.navigate(['members', clickedMember.id]);
+ };
 
 
 }

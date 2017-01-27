@@ -1,1 +1,5 @@
 <h2>Member Page</h2>
+
+<div class="individualMembers" *ngFor="let member of members" (click)="goToDetailPage(member)">
+    <h3><em>{{member.name}}</em>, {{member.house}}</h3>
+</div>
