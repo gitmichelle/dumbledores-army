@@ -1,0 +1,17 @@
+{ "members": [{
+    "name": "Harry Potter",
+    "house": "Gryffindor",
+    "patronus": "stag",
+    "id": "1"
+    }, {
+    "name": "Ron Weasley",
+    "house": "Gryffindor",
+    "patronus": "Jack Russell Terrier",
+    "id": "2"
+      }, {
+    "name": "Hermione Granger",
+    "house": "Gryffindor",
+    "patronus": "otter",
+    "id": "3"
+  }]
+}
