@@ -1,3 +1,14 @@
 p:last-child {
   margin-bottom: 100px;
 }
+
+h2 {
+  color: #810041;
+  margin-left: .75em;
+}
+
+p {
+  color: white;
+  margin: 1em 1.25em;
+  font-size: 16px;
+}

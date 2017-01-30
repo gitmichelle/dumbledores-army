@@ -1,20 +1,23 @@
-<h2>Member Page</h2>
-<h5>Sort by House:
-<select (change)="onChange($event.target.value)">
-  <option value="allMembers" selected="selected">All Members</option>
-  <option value="gryffindor">Gryffindor</option>
-  <option value="ravenclaw">Ravenclaw</option>
-  <option value="hufflepuff">Hufflepuff</option>
-  <option value="slytherin">Slytherin</option>
-</select>
-</h5>
-<div class="memberList">
-  <div class="individualMembers" *ngFor="let member of members | async | sorting:filterByHouse">
-    <h3 (click)="goToDetailPage(member)"><em>{{member.name}}</em>, {{member.house}}</h3>
-    <div *ngIf="currentRoute === '/admin'">
-      <hr>
-      <app-edit-member [selectedMember]="member"></app-edit-member>
-      <!-- This tells MemberComponent to pass the current member from the directive loop to the EditMemberComponent's @Input field named selectedMember -->
+<div class="main">
+  <h1>Member Page</h1>
+  <hr>
+  <h5>Sort by House:
+  <select (change)="onChange($event.target.value) " class="btn">
+    <option value="allMembers" selected="selected">All Members</option>
+    <option value="gryffindor">Gryffindor</option>
+    <option value="ravenclaw">Ravenclaw</option>
+    <option value="hufflepuff">Hufflepuff</option>
+    <option value="slytherin">Slytherin</option>
+  </select>
+  </h5>
+  <div class="memberList">
+    <div class="individualMembers" *ngFor="let member of members | async | sorting:filterByHouse">
+      <h3 (click)="goToDetailPage(member)"><em>{{member.name}}</em>, {{member.house}}</h3>
+      <div *ngIf="currentRoute === '/admin'">
+        <hr>
+        <app-edit-member [selectedMember]="member"></app-edit-member>
+        <!-- This tells MemberComponent to pass the current member from the directive loop to the EditMemberComponent's @Input field named selectedMember -->
+      </div>
     </div>
   </div>
 </div>

@@ -1,5 +1,8 @@
-<div>
-  <h3>{{(memberToDisplay | async)?.name}}</h3>
-  <h5>House: {{(memberToDisplay | async)?.house}}</h5>
-  <p>Patronus: {{(memberToDisplay | async)?.patronus}}</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h2>{{(memberToDisplay | async)?.name}}</h2>
+    <hr>
+    <h4>House: {{(memberToDisplay | async)?.house}}</h4>
+    <h4>Patronus: {{(memberToDisplay | async)?.patronus}}</h4>
+  </div>
 </div>

@@ -11,7 +11,7 @@
 <label>New Member Patronus:</label>
 <input [(ngModel)]="selectedMember.patronus">
 
-<button (click)="beginUpdatingMember(selectedMember)">Update</button>
+<button class="btn" (click)="beginUpdatingMember(selectedMember)">Update</button>
 <!-- When this button is clicked beginUpdatingMember() is triggered. It calls the MemberService's updateMember() method, passing in the locally-updated Member and updates Firebase -->
 
-<button (click)="beginDeletingMember(selectedMember)">Delete</button>
+<button class="btn" (click)="beginDeletingMember(selectedMember)">Delete</button>

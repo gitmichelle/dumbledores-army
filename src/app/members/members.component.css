@@ -5,3 +5,14 @@
 .memberList {
   margin-bottom: 10em;
 }
+
+.main {
+  background-color: #810041;
+  color: white;
+  padding: 2em 5em;
+}
+
+.btn {
+  background-color: #1ef3f1;
+  color: black;
+}
