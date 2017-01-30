@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MemberService } from '../member.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
+
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
@@ -14,6 +15,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class MembersComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+  filterByHouse: string = "allMembers";
 
   constructor(private router: Router, private memberService: MemberService){}
 
@@ -25,5 +27,9 @@ export class MembersComponent implements OnInit {
    goToDetailPage(clickedMember) {
      this.router.navigate(['members', clickedMember.$key]);
    };
+
+   onChange(optionFromMenu) {
+    this.filterByHouse = optionFromMenu;
+  }
 
 }

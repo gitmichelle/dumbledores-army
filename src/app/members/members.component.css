@@ -1,4 +1,7 @@
 .individualMembers {
   cursor: pointer;
+}
 
+.memberList {
+  margin-bottom: 10em;
 }
