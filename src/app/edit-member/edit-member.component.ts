@@ -20,4 +20,12 @@ export class EditMemberComponent implements OnInit {
     this.memberService.updateMember(memberToUpdate);
   }
 
+  beginDeletingMember(memberToDelete){
+    if(confirm("Are you sure you want to delete this member from Dumbledore's Army?")){
+      this.memberService.deleteMember(memberToDelete);
+      // If the user clicks ok the method will invoke our existing MemberService, and request it run a method called deleteMember(). We pass in the Member the user has selected to delete as an argument.
+    }
+
+  }
+
 }

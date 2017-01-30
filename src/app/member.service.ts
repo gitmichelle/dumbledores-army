@@ -30,4 +30,10 @@ export class MemberService {
                                 house: localUpdatedMember.house,
                                 patronus: localUpdatedMember.patronus});
   }
+
+  deleteMember(localMemberToDelete){
+    var memberEntryInFirebase = this.getMemberById(localMemberToDelete.$key);
+    memberEntryInFirebase.remove();
+    //deleteMember() takes the local copy of the Member, calls the existing getMemberById() method to locate the Firebase entry, calls localMemberToDelete.$key within the argument to getMemberById(), and after the database entry has been located, AngularFire's built in remove() method is called on memberEntryInFirebase which removes the entire entry from Firebase.
+  }
 }
