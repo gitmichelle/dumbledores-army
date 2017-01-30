@@ -1,5 +1,10 @@
 <h2>Member Page</h2>
 
-<div class="individualMembers" *ngFor="let member of members | async" (click)="goToDetailPage(member)">
-    <h3><em>{{member.name}}</em>, {{member.house}}</h3>
+<div class="individualMembers" *ngFor="let member of members | async">
+  <h3 (click)="goToDetailPage(member)"><em>{{member.name}}</em>, {{member.house}}</h3>
+  <div *ngIf="currentRoute === '/admin'">
+    <hr>
+    <app-edit-member [selectedMember]="member"></app-edit-member>
+    <!-- This tells MemberComponent to pass the current member from the directive loop to the EditMemberComponent's @Input field named selectedMember -->
+  </div>
 </div>

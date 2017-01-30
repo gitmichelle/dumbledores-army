@@ -1,0 +1,15 @@
+<h4>Edit Member</h4>
+
+<label>New Member Name:</label>
+<input [(ngModel)]="selectedMember.name">
+<br>
+
+<label>New Member House:</label>
+<input [(ngModel)]="selectedMember.house">
+<br>
+
+<label>New Member Patronus:</label>
+<input [(ngModel)]="selectedMember.patronus">
+
+<button (click)="beginUpdatingMember(selectedMember)">Update</button>
+<!-- When this button is clicked beginUpdatingMember() is triggered. It calls the MemberService's updateMember() method, passing in the locally-updated Member and updates Firebase -->

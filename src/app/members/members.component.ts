@@ -13,6 +13,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 export class MembersComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
   constructor(private router: Router, private memberService: MemberService){}
 
@@ -21,8 +22,8 @@ export class MembersComponent implements OnInit {
   }
 
 
-   goToDetailPage(clickedMember: Member) {
-     this.router.navigate(['members', clickedMember.id]);
+   goToDetailPage(clickedMember) {
+     this.router.navigate(['members', clickedMember.$key]);
    };
 
 }

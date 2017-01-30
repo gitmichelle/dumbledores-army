@@ -16,11 +16,18 @@ export class MemberService {
     return this.members;
   }
 
-  getMemberById(memberId: number){
-    for (var i = 0; i <= MEMBERS.length - 1; i++) {
-      if (MEMBERS[i].id === memberId) {
-        return MEMBERS[i];
-      }
-    }
+  addMember(newMember: Member) {
+    this.members.push(newMember);
+  }
+
+  getMemberById(memberId: string){
+    return this.angularFire.database.object('members/' + memberId);
+  }
+
+  updateMember(localUpdatedMember){
+    var memberEntryInFirebase = this.getMemberById(localUpdatedMember.$key);
+    memberEntryInFirebase.update({name: localUpdatedMember.name,
+                                house: localUpdatedMember.house,
+                                patronus: localUpdatedMember.patronus});
   }
 }
