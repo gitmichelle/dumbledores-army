@@ -36,7 +36,7 @@ You will need the following properly installed on your computer.
 * `bower install`
 
 #### Setup Firebase
-* Make free account at [Firebase's website] (http://firebase.google.com/)
+* Make free account at [Firebase's website](http://firebase.google.com/)
 * Once you've created an account, you should be taken to a user dashboard area, with an option to Create a New Project. Select this option, provide a name for your new project, and select your Country/region from the drop-down menu.
 * You'll then be taken to an "Overview" area. Where you'll be offered three options. Select Add Firebase to your web app. Firebase should respond with a pop-up modal window. Keep the information in this modal handy.
 * Install AngularFire `$ npm install angularfire2 firebase --save`
